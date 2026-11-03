@@ -37,6 +37,10 @@ Dataset construction/
   filenames baked into a script's example paths before running it. Scripts never write
   into `finalised datasets/` directly — that holds only already-published output;
   promote a freshly-built dataset there yourself once validated.
+- **Known issue, not yet fixed**: `scripts/alternate strategy_mRNA sequence retrieval/getting mRNA from NM ids.py`
+  still hardcodes the original author's personal email (`jagjotarora07@gmail.com`) as
+  the default for NCBI Entrez's required `email` param — replace it with your own
+  before running that script.
 - Scripts have no shared `requirements.txt`/`pyproject.toml`. Dependencies observed
   across the pipeline: `pandas`, `polars`, `numpy`, `requests`, `biopython` (`Bio.Seq`,
   `Bio.SeqIO`, `Bio.PDB` — `PDBParser`, `DSSP`, `ShrakeRupley`, `PPBuilder`), `tqdm`,

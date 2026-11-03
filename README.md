@@ -43,6 +43,11 @@ Scripts never write into `finalised datasets/` directly — that directory holds
 already-published end artifact. Once you've validated a fresh dataset, add it there
 yourself as a new file.
 
+**Known issue to fix before reuse**: `scripts/alternate strategy_mRNA sequence
+retrieval/getting mRNA from NM ids.py` still hardcodes the original author's personal
+email (`jagjotarora07@gmail.com`) as the default for NCBI Entrez's required `email`
+parameter. Replace it with your own email before running that script.
+
 ## Pipeline overview
 
 The pipeline starts from a chosen organism's proteome on UniProt and progressively
