@@ -91,6 +91,14 @@ data for every protein:
    (normalized against Miller et al. 1987 reference values) from the PDB structures;
    per-residue Kyte–Doolittle hydrophobicity from the AA sequence.
 
+## Git workflow
+
+This repo is published on GitHub as `psde-777/protein_folding_statistics` (public,
+`origin` remote over SSH). **All new work happens on the `develop` branch** — `main`
+only receives a merge once a batch of work on `develop` is complete and validated; do
+not commit directly to `main`. Every change (new dataset, script edit, doc update)
+should be its own git commit with a clean, descriptive, imperative message.
+
 ## Dataset growth convention
 
 New organism datasets are **appended**, not rewritten — existing finalized CSVs stay
@@ -98,6 +106,3 @@ untouched once published. Keep using plain git for the dataset CSVs (no Git LFS,
 Releases) as long as each file stays well under GitHub's 50MB warning threshold; this
 holds for the planned scale (roughly 5-10 organisms total). Revisit that choice only if
 a single file approaches ~50MB or a published dataset needs in-place correction.
-
-Every change (new dataset, script edit, doc update) should be its own git commit with
-a clean, descriptive, imperative message.
