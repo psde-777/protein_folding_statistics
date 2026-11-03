@@ -32,5 +32,6 @@ def main(input_file, output_file):
 
 if __name__ == "__main__":
     # Change these filenames as needed
-    main("/Users/jagjotarora/Desktop/CCB/Main task ExpressinHost/work/Alphafold datasets/E.coli/E.coli_dataset_completed.csv",
-         "/Users/jagjotarora/Desktop/CCB/Main task ExpressinHost/work/Alphafold datasets/E.coli/E.coli_dataset_hydrophobicity.csv")
+    WORK_DIR = "Dataset construction/work"  # local, untracked working directory for this organism's intermediate files (see README)
+    main(f"{WORK_DIR}/E.coli/E.coli_dataset_completed.csv",
+         f"{WORK_DIR}/E.coli/E.coli_dataset_hydrophobicity.csv")

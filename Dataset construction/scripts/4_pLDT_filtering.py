@@ -1,10 +1,12 @@
 import pandas as pd
 
+WORK_DIR = "Dataset construction/work"  # local, untracked working directory for this organism's intermediate files (see README)
+
 # Step 1: Read the CSV
-df = pd.read_csv('/Users/jagjotarora/Documents/RSA project/Yeast/Yeast_alphafold_proteins_extracted.csv')
+df = pd.read_csv(f'{WORK_DIR}/Yeast/Yeast_alphafold_proteins_extracted.csv')
 
 # Step 2: Filter rows where globalMetricValue is >= 85
 filtered_df = df[df['globalMetricValue'] >= 75]
 
 # Step 3: Save to a new CSV
-filtered_df.to_csv('/Users/jagjotarora/Documents/RSA project/Yeast/Yeast_alphafold_proteins_extracted_filtered.csv', index=False)
+filtered_df.to_csv(f'{WORK_DIR}/Yeast/Yeast_alphafold_proteins_extracted_filtered.csv', index=False)

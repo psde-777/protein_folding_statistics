@@ -1,8 +1,10 @@
 import csv
 
+WORK_DIR = "Dataset construction/work"  # local, untracked working directory for this organism's intermediate files (see README)
+
 # Path to your GTF file
-gtf_file = '/Users/jagjotarora/Documents/RSA project/Yeast/GCF_000146045.2_R64.ncbiRefSeq.gtf'
-output_file = "/Users/jagjotarora/Documents/RSA project/Yeast/Yeast_GTF_data.csv"
+gtf_file = f'{WORK_DIR}/Yeast/GCF_000146045.2_R64.ncbiRefSeq.gtf'
+output_file = f"{WORK_DIR}/Yeast/Yeast_GTF_data.csv"
 
 # Open the GTF file
 with open(gtf_file, "r") as infile:

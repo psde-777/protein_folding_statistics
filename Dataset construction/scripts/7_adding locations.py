@@ -44,9 +44,10 @@ def process_csv(file1, file2, output_file):
 
 
 # Example usage
+WORK_DIR = "Dataset construction/work"  # local, untracked working directory for this organism's intermediate files (see README)
 #file 1: our main csv with gene names
 #file 2: GTF csv file
 #file 3: output main file having gene locations
-process_csv('/Users/jagjotarora/Documents/RSA project/E.coli/alphafold_proteins_gene_names.csv',
-            '/Users/jagjotarora/Documents/RSA project/E.coli/E.coli_GTF_data.csv',
-            '/Users/jagjotarora/Documents/RSA project/E.coli/E.coli_gene_names+locations.csv')
+process_csv(f'{WORK_DIR}/E.coli/alphafold_proteins_gene_names.csv',
+            f'{WORK_DIR}/E.coli/E.coli_GTF_data.csv',
+            f'{WORK_DIR}/E.coli/E.coli_gene_names+locations.csv')

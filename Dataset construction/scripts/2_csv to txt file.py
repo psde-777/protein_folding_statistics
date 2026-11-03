@@ -15,6 +15,7 @@ def save_codes_to_txt(input_csv, output_txt):
         f.write(codes_str)
 
 # Example usage
-input_csv = "/Users/jagjotarora/Documents/RSA project/Yeast/single_domain_proteins_Yeast.csv"  # Replace with your CSV file path
-output_txt = "/Users/jagjotarora/Documents/RSA project/Yeast/single_domain_proteins_Yeast.txt"  # Replace with your desired output .txt file path
+WORK_DIR = "Dataset construction/work"  # local, untracked working directory for this organism's intermediate files (see README)
+input_csv = f"{WORK_DIR}/Yeast/single_domain_proteins_Yeast.csv"  # Replace with your CSV file path
+output_txt = f"{WORK_DIR}/Yeast/single_domain_proteins_Yeast.txt"  # Replace with your desired output .txt file path
 save_codes_to_txt(input_csv, output_txt)

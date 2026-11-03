@@ -45,6 +45,7 @@ def process_csv(input_file, output_file):
 
 # Example usage
 if __name__ == "__main__":
-    input_file = '/Users/jagjotarora/Documents/RSA project/Yeast/Yeast_alphafold_proteins_gene_names.csv'
-    output_file = '/Users/jagjotarora/Documents/RSA project/Yeast/Yeast_NM.csv'
+    WORK_DIR = "Dataset construction/work"  # local, untracked working directory for this organism's intermediate files (see README)
+    input_file = f'{WORK_DIR}/Yeast/Yeast_alphafold_proteins_gene_names.csv'
+    output_file = f'{WORK_DIR}/Yeast/Yeast_NM.csv'
     process_csv(input_file, output_file)

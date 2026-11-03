@@ -57,9 +57,10 @@ def process_csv(input_csv, output_csv, fasta_file):
             print(f"Processed {processed_count} rows", end="\r")
 
 # Example usage
-fasta_path = "/Users/jagjotarora/Documents/RSA project/E.coli/E.coli_whole_genome.fasta"  # Replace with actual FASTA file path
-input_csv_path = "/Users/jagjotarora/Documents/RSA project/E.coli/E.coli_gene_names+locations.csv"  # Replace with actual input CSV file path
-output_csv_path = "/Users/jagjotarora/Documents/RSA project/E.coli/E.coli_sequences(+).csv"  # Replace with desired output CSV file path
+WORK_DIR = "Dataset construction/work"  # local, untracked working directory for this organism's intermediate files (see README)
+fasta_path = f"{WORK_DIR}/E.coli/E.coli_whole_genome.fasta"  # Replace with actual FASTA file path
+input_csv_path = f"{WORK_DIR}/E.coli/E.coli_gene_names+locations.csv"  # Replace with actual input CSV file path
+output_csv_path = f"{WORK_DIR}/E.coli/E.coli_sequences(+).csv"  # Replace with desired output CSV file path
 
 process_csv(input_csv_path, output_csv_path, fasta_path)
 print("\nProcessing complete!")

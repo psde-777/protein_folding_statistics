@@ -3,8 +3,10 @@ import requests
 import xml.etree.ElementTree as ET
 import time
 
+WORK_DIR = "Dataset construction/work"  # local, untracked working directory for this organism's intermediate files (see README)
+
 # Read the UniProt IDs from CSV
-df = pd.read_csv('/Users/jagjotarora/Documents/RSA project/Yeast/Yeast_alphafold_proteins_extracted_filtered.csv')
+df = pd.read_csv(f'{WORK_DIR}/Yeast/Yeast_alphafold_proteins_extracted_filtered.csv')
 
 # Print column names to ensure correct naming (just for debugging)
 print("CSV Loaded, Columns:", df.columns)
@@ -56,5 +58,5 @@ print("Starting gene name retrieval process...")
 df['gene_name'] = df['uniprotAccession'].apply(get_gene_name)
 
 # Save the result to a new CSV
-df.to_csv('/Users/jagjotarora/Documents/RSA project/Yeast/Yeast_alphafold_proteins_gene_names.csv', index=False)
+df.to_csv(f'{WORK_DIR}/Yeast/Yeast_alphafold_proteins_gene_names.csv', index=False)
 print("Gene names fetched and saved to 'uniprot_with_gene_names.csv'")

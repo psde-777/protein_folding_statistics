@@ -206,11 +206,12 @@ def process_codon_table_from_file(
 
 
 if __name__ == "__main__":
-    table_path = '/Users/jagjotarora/Downloads/Saccharomyces_cerevisiae.txt'
+    WORK_DIR = "Dataset construction/work"  # local, untracked working directory for this organism's intermediate files (see README)
+    table_path = f'{WORK_DIR}/Yeast/Saccharomyces_cerevisiae.txt'
     processed_df = process_codon_table_from_file(table_path, 0.35, 0.50)
 
     # Print the processed DataFrame
     print(processed_df)
 
     # Save as CSV
-    processed_df.write_csv("/Users/jagjotarora/Desktop/RSA paper/processed speed rank tables/Yeast_processed_df.csv")
+    processed_df.write_csv(f"{WORK_DIR}/Yeast/Yeast_processed_df.csv")

@@ -61,9 +61,10 @@ def process_batch(pdb_files_batch):
 
 if __name__ == "__main__":
     # File paths
-    csv_file_path = '/Users/jagjotarora/Documents/RSA project/Arabidopsis/Arabidopsis_speeds+ranks.csv'
-    output_csv_file_path = '/Users/jagjotarora/Documents/RSA project/Arabidopsis/Arabidopsis_final.csv'
-    pdb_folder_path = '/Users/jagjotarora/Documents/RSA project/Arabidopsis/Arabidopsis_alphafold_pdb_files'
+    WORK_DIR = "Dataset construction/work"  # local, untracked working directory for this organism's intermediate files (see README)
+    csv_file_path = f'{WORK_DIR}/Arabidopsis/Arabidopsis_speeds+ranks.csv'
+    output_csv_file_path = f'{WORK_DIR}/Arabidopsis/Arabidopsis_final.csv'
+    pdb_folder_path = f'{WORK_DIR}/Arabidopsis/Arabidopsis_alphafold_pdb_files'
 
     df = pd.read_csv(csv_file_path)
     pdb_files = [os.path.join(pdb_folder_path, f"{row[0]}.pdb") for _, row in df.iterrows()]

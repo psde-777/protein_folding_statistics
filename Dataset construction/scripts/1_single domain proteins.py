@@ -57,6 +57,7 @@ def process_uniprot_list(input_file, output_file):
 
 
 # Example usage
-input_file = "/Users/jagjotarora/Documents/RSA project/Yeast/Uniprot_protein_list_Yeast.txt"  # Input text file with UniProt IDs
-output_file = "/Users/jagjotarora/Documents/RSA project/Yeast/single_domain_proteins_Yeast.csv"  # Output CSV file
+WORK_DIR = "Dataset construction/work"  # local, untracked working directory for this organism's intermediate files (see README)
+input_file = f"{WORK_DIR}/Yeast/Uniprot_protein_list_Yeast.txt"  # Input text file with UniProt IDs
+output_file = f"{WORK_DIR}/Yeast/single_domain_proteins_Yeast.csv"  # Output CSV file
 process_uniprot_list(input_file, output_file)

@@ -206,7 +206,8 @@ def process_codon_table_from_file(
 
 
 if __name__ == "__main__":
-    table_path = '/Users/jagjotarora/Downloads/Arabidopsis_thaliana.txt'
+    WORK_DIR = "Dataset construction/work"  # local, untracked working directory for this organism's intermediate files (see README)
+    table_path = f'{WORK_DIR}/Arabidopsis/Arabidopsis_thaliana.txt'
     processed_df = process_codon_table_from_file(table_path, 0.35, 0.50)
 
     # Print the processed DataFrame
@@ -232,8 +233,9 @@ def translational_rank_profile(mrna_sequence: str, processed_df: pl.DataFrame) -
 
 
 if __name__ == "__main__":
+    WORK_DIR = "Dataset construction/work"  # local, untracked working directory for this organism's intermediate files (see README)
     # Load mRNA sequences from the CSV file
-    mrna_data = pl.read_csv('/Users/jagjotarora/Documents/RSA project/Arabidopsis/Arabidopsis_speeds.csv')
+    mrna_data = pl.read_csv(f'{WORK_DIR}/Arabidopsis/Arabidopsis_speeds.csv')
 
     # Specify the column name or index containing mRNA sequences
     mrna_column_name = "Retrieved_sequence"  # Change this to match your column name
@@ -266,6 +268,6 @@ if __name__ == "__main__":
 
     # Save the updated DataFrame to a new CSV file
     mrna_data.write_csv(
-        '/Users/jagjotarora/Documents/RSA project/Arabidopsis/Arabidopsis_speeds+ranks.csv')
+        f'{WORK_DIR}/Arabidopsis/Arabidopsis_speeds+ranks.csv')
 
     print("New CSV file with rank profiles created successfully!")

@@ -15,6 +15,7 @@ def remove_invalid_nm_rows(input_csv, output_csv):
     print(f"✅ Filtered CSV saved to: {output_csv}")
 
 # Example usage:
-input_csv_path = "/Users/jagjotarora/Documents/RSA project/Yeast/Yeast_NM.csv"
-output_csv_path = "/Users/jagjotarora/Documents/RSA project/Yeast/Yeast_NM_filtered.csv"
+WORK_DIR = "Dataset construction/work"  # local, untracked working directory for this organism's intermediate files (see README)
+input_csv_path = f"{WORK_DIR}/Yeast/Yeast_NM.csv"
+output_csv_path = f"{WORK_DIR}/Yeast/Yeast_NM_filtered.csv"
 remove_invalid_nm_rows(input_csv_path, output_csv_path)

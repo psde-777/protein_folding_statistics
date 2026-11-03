@@ -64,6 +64,7 @@ def process_csv_with_cds(input_csv, output_csv, id_column="NM_ID"):
 
 # Example usage
 if __name__ == "__main__":
-    input_file = '/Users/jagjotarora/Documents/RSA project/Yeast/Yeast_NM_filtered.csv'  # Replace with your input CSV file path
-    output_file = '/Users/jagjotarora/Documents/RSA project/Yeast/Yeast_NM_filtered_CDS.csv'  # Replace with your output CSV file path
+    WORK_DIR = "Dataset construction/work"  # local, untracked working directory for this organism's intermediate files (see README)
+    input_file = f'{WORK_DIR}/Yeast/Yeast_NM_filtered.csv'  # Replace with your input CSV file path
+    output_file = f'{WORK_DIR}/Yeast/Yeast_NM_filtered_CDS.csv'  # Replace with your output CSV file path
     process_csv_with_cds(input_file, output_file)

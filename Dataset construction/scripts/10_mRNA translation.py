@@ -1,9 +1,11 @@
 import pandas as pd
 from Bio.Seq import Seq
 
+WORK_DIR = "Dataset construction/work"  # local, untracked working directory for this organism's intermediate files (see README)
+
 # File paths
-input_csv = '/Users/jagjotarora/Documents/RSA project/Yeast/Yeast_NM_filtered_CDS_cleaned3.csv'  # Replace with your input file path
-output_csv = '/Users/jagjotarora/Documents/RSA project/Yeast/Yeast_sequences_translated.csv'  # Replace with your output file path
+input_csv = f'{WORK_DIR}/Yeast/Yeast_NM_filtered_CDS_cleaned3.csv'  # Replace with your input file path
+output_csv = f'{WORK_DIR}/Yeast/Yeast_sequences_translated.csv'  # Replace with your output file path
 
 # Load the CSV file
 data = pd.read_csv(input_csv)

@@ -1,8 +1,10 @@
 import pandas as pd
 
+WORK_DIR = "Dataset construction/work"  # local, untracked working directory for this organism's intermediate files (see README)
+
 # File paths
-input_csv = '/Users/jagjotarora/Documents/RSA project/Yeast/Yeast_NM_filtered_CDS.csv'
-output_csv = '/Users/jagjotarora/Documents/RSA project/Yeast/Yeast_NM_filtered_CDS_cleaned4.csv'
+input_csv = f'{WORK_DIR}/Yeast/Yeast_NM_filtered_CDS.csv'
+output_csv = f'{WORK_DIR}/Yeast/Yeast_NM_filtered_CDS_cleaned4.csv'
 
 # Load CSV
 df = pd.read_csv(input_csv)

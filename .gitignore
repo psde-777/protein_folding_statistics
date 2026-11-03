@@ -3,3 +3,9 @@ __pycache__/
 *.pyc
 .idea/
 .vscode/
+.claude/
+
+# local, untracked working directory for raw/intermediate per-organism pipeline
+# files (genome FASTA/GTF, raw UniProt/AlphaFold downloads, PDB folders, etc.) —
+# see README.md "Running the scripts"
+Dataset construction/work/

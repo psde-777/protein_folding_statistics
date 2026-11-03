@@ -28,10 +28,15 @@ Dataset construction/
 ## Running the scripts
 
 - **There is no runner, CLI, build, lint, or test step** — each numbered script in
-  `scripts/` is a standalone, per-organism template. Scripts hardcode absolute input
-  and output paths (originally under `/Users/jagjotarora/Documents/RSA project/...`)
-  near the bottom of the file — always edit these paths before running a script
-  against a new organism's data.
+  `scripts/` is a standalone, per-organism template. Every script builds its example
+  paths from a `WORK_DIR = "Dataset construction/work"` constant defined right next to
+  them (near the bottom of the file) — a local, untracked scratch directory for
+  raw/intermediate per-organism files (genome FASTA/GTF, raw UniProt/AlphaFold
+  downloads, PDB folders, per-step CSVs) that is `.gitignore`d and does not exist until
+  you create and populate it yourself. Always check/adjust the organism name and exact
+  filenames baked into a script's example paths before running it. Scripts never write
+  into `finalised datasets/` directly — that holds only already-published output;
+  promote a freshly-built dataset there yourself once validated.
 - Scripts have no shared `requirements.txt`/`pyproject.toml`. Dependencies observed
   across the pipeline: `pandas`, `polars`, `numpy`, `requests`, `biopython` (`Bio.Seq`,
   `Bio.SeqIO`, `Bio.PDB` — `PDBParser`, `DSSP`, `ShrakeRupley`, `PPBuilder`), `tqdm`,

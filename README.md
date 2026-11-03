@@ -22,9 +22,26 @@ Dataset construction/
     └── Arabidopsis_dataset.csv
 ```
 
-Scripts were written per-organism with hardcoded local file paths (originally under
-`/Users/jagjotarora/Documents/RSA project/<Organism>/...`) — they are templates to be
-copied and re-pointed at your own paths/organism, not a one-command pipeline.
+Scripts were written per-organism and are templates, not a one-command pipeline — copy
+and adapt them per organism rather than expecting a single run through all 17 steps.
+
+## Running the scripts
+
+Every script reads/writes files under a `WORK_DIR = "Dataset construction/work"`
+constant (defined near its hardcoded example paths). This directory is a local,
+untracked scratch space for raw/intermediate per-organism files — genome FASTA/GTF,
+raw UniProt/AlphaFold downloads, PDB folders, per-step CSVs — and is excluded via
+`.gitignore`; only the final merged dataset per organism gets committed, under
+`finalised datasets/`. Before running a script:
+
+1. Create `Dataset construction/work/<Organism>/` yourself and populate it with
+   whatever that step needs (it won't exist otherwise).
+2. Check the organism name baked into the script's example paths (e.g. `Yeast`,
+   `E.coli`, `Arabidopsis`) and the exact filenames — adjust both for your organism/run.
+
+Scripts never write into `finalised datasets/` directly — that directory holds the
+already-published end artifact. Once you've validated a fresh dataset, add it there
+yourself as a new file.
 
 ## Pipeline overview
 
